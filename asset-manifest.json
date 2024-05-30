@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/MarceloKiilian.github.io/static/css/main.176f5883.css",
+    "main.js": "/MarceloKiilian.github.io/static/js/main.65390133.js",
+    "static/js/453.12e0ab11.chunk.js": "/MarceloKiilian.github.io/static/js/453.12e0ab11.chunk.js",
+    "index.html": "/MarceloKiilian.github.io/index.html",
+    "main.176f5883.css.map": "/MarceloKiilian.github.io/static/css/main.176f5883.css.map",
+    "main.65390133.js.map": "/MarceloKiilian.github.io/static/js/main.65390133.js.map",
+    "453.12e0ab11.chunk.js.map": "/MarceloKiilian.github.io/static/js/453.12e0ab11.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.176f5883.css",
+    "static/js/main.65390133.js"
+  ]
+}
