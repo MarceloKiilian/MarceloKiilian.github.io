@@ -1,0 +1,47 @@
+/* Menu.css */
+.menu {
+  background-color: #333; /* Cor de fundo do menu */
+  position: fixed; /* Fixa o menu no topo da página */
+  top: 0; /* Posiciona o menu no topo da página */
+  width: 100%; /* Faz o menu ocupar a largura total */
+  z-index: 1000; /* Garante que o menu fique acima de outros elementos */
+}
+
+.App {
+  padding-top: 60px; /* Adiciona um padding para evitar que o conteúdo fique escondido atrás do menu */
+}
+
+.App-header {
+  text-align: center;
+}
+.menu-title {
+  background-color: #474747;
+  color: #fff; /* Cor do texto do título */
+  text-align: center; /* Centraliza o título */
+  margin: 0; /* Remove a margem padrão */
+  padding: 10px 0; /* Espaçamento interno acima e abaixo do título */
+  font-size: 24px; /* Tamanho da fonte do título */
+}
+
+.menu ul {
+  list-style-type: none; /* Remove os marcadores de lista */
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Evita que os itens do menu "vazem" para fora do container */
+}
+
+.menu ul li {
+  float: left; /* Exibe os itens do menu em linha */
+}
+
+.menu ul li a {
+  display: block; /* Faz cada link ocupar todo o espaço do item da lista */
+  color: white; /* Cor do texto */
+  text-align: center; /* Centraliza o texto */
+  padding: 14px 16px; /* Espaçamento interno */
+  text-decoration: none; /* Remove o sublinhado dos links */
+}
+
+.menu ul li a:hover {
+  background-color: #111; /* Cor de fundo ao passar o mouse */
+}
