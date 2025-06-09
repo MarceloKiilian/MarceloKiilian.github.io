@@ -11,6 +11,7 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #ffffff;
+    scroll-padding-top: 80px; /* Adiciona padding para compensar header fixo */
 }
 
 /* Container padrão */
@@ -143,6 +144,20 @@ body {
     align-items: center;
 }
 
+.profile-photo {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 90, 156, 0.2);
+    border: 5px solid #005a9c;
+    transition: transform 0.3s ease;
+}
+
+.profile-photo:hover {
+    transform: scale(1.05);
+}
+
 .hero-placeholder {
     width: 300px;
     height: 300px;
@@ -179,6 +194,7 @@ body {
 /* Seções */
 .section {
     padding: 80px 0;
+    scroll-margin-top: 70px; /* Compensa altura do header fixo */
 }
 
 .section-alt {
@@ -616,6 +632,11 @@ body {
         font-size: 1rem;
     }
 
+    .profile-photo {
+        width: 250px;
+        height: 250px;
+    }
+
     /* Timeline responsiva */
     .timeline::after {
         left: 31px;
@@ -710,6 +731,11 @@ body {
     .cert-level {
         margin-left: 0;
         align-self: flex-end;
+    }
+
+    .profile-photo {
+        width: 200px;
+        height: 200px;
     }
 }
 
