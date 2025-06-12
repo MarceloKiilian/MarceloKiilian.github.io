@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Perdeu, mas podia ter salvo - Segurança Digital e Backup Comunitário
+    </title>
+    <meta
+      name="description"
+      content="Palestra gratuita sobre segurança digital e backup comunitário na prática"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          sans-serif;
+        line-height: 1.6;
+        color: #1f2937;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      .bg-gradient {
+        background: linear-gradient(
+          135deg,
+          #dbeafe 0%,
+          #ffffff 50%,
+          #dcfce7 100%
+        );
+        min-height: 100vh;
+      }
+
+      /* Header Styles */
+      .header {
+        text-align: center;
+        padding: 3rem 1rem;
+      }
+
+      .icons-container {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 2rem;
+      }
+
+      .icon-box {
+        padding: 0.75rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .icon-blue {
+        background-color: #dbeafe;
+      }
+      .icon-green {
+        background-color: #dcfce7;
+      }
+      .icon-purple {
+        background-color: #e9d5ff;
+      }
+
+      .icon {
+        width: 2rem;
+        height: 2rem;
+      }
+
+      .icon-blue .icon {
+        color: #2563eb;
+      }
+      .icon-green .icon {
+        color: #16a34a;
+      }
+      .icon-purple .icon {
+        color: #9333ea;
+      }
+
+      .main-title {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #1f2937;
+        margin-bottom: 2rem;
+        line-height: 1.2;
+      }
+
+      .subtitle {
+        display: block;
+        color: #2563eb;
+        margin-top: 0.5rem;
+      }
+
+      .description {
+        font-size: 1.25rem;
+        color: #4b5563;
+        margin-bottom: 2rem;
+        max-width: 48rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* Main Content */
+      .main-content {
+        max-width: 72rem;
+        margin: 0 auto;
+        padding: 0 1rem 3rem;
+      }
+
+      /* Section Styles */
+      .section {
+        background: white;
+        border-radius: 1rem;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        padding: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .section-title {
+        font-size: 1.875rem;
+        font-weight: bold;
+        color: #1f2937;
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+
+      .grid {
+        display: grid;
+        gap: 2rem;
+      }
+
+      .grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .grid-4 {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      @media (max-width: 768px) {
+        .grid-2,
+        .grid-4 {
+          grid-template-columns: 1fr;
+        }
+        .main-title {
+          font-size: 2rem;
+        }
+      }
+
+      /* Risk/Benefits Lists */
+      .content-block h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .risk-title {
+        color: #dc2626;
+      }
+
+      .benefit-title {
+        color: #16a34a;
+      }
+
+      .list {
+        list-style: none;
+      }
+
+      .list-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 0.75rem;
+        color: #374151;
+      }
+
+      .bullet {
+        margin-right: 0.5rem;
+        font-weight: bold;
+      }
+
+      .bullet-red {
+        color: #ef4444;
+      }
+      .bullet-green {
+        color: #10b981;
+      }
+
+      /* Practical Examples */
+      .bg-gradient-light {
+        background: linear-gradient(to right, #eff6ff, #f0fdf4);
+        border-radius: 1rem;
+        padding: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .example-card {
+        background: white;
+        border-radius: 0.75rem;
+        padding: 1.5rem;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+
+      .example-icon {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+      }
+
+      .example-icon-blue {
+        background-color: #dbeafe;
+      }
+      .example-icon-green {
+        background-color: #dcfce7;
+      }
+
+      .example-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #1f2937;
+        margin-bottom: 0.75rem;
+      }
+
+      .example-description {
+        color: #4b5563;
+        margin-bottom: 1rem;
+      }
+
+      .feature-list {
+        font-size: 0.875rem;
+        color: #374151;
+      }
+
+      /* Event Details */
+      .event-detail {
+        text-align: center;
+        padding: 1rem;
+        border-radius: 0.75rem;
+      }
+
+      .detail-blue {
+        background-color: #eff6ff;
+      }
+      .detail-green {
+        background-color: #f0fdf4;
+      }
+      .detail-purple {
+        background-color: #faf5ff;
+      }
+      .detail-orange {
+        background-color: #fff7ed;
+      }
+
+      .detail-icon {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 0.75rem;
+      }
+
+      .detail-icon-blue {
+        background-color: #2563eb;
+      }
+      .detail-icon-green {
+        background-color: #16a34a;
+      }
+      .detail-icon-purple {
+        background-color: #9333ea;
+      }
+      .detail-icon-orange {
+        background-color: #ea580c;
+      }
+
+      .detail-title {
+        font-weight: 600;
+        color: #1f2937;
+        margin-bottom: 0.25rem;
+      }
+
+      .detail-content {
+        color: #4b5563;
+      }
+
+      .free-text {
+        font-weight: bold;
+        color: #16a34a;
+      }
+
+      /* Call to Action */
+      .cta-section {
+        background: linear-gradient(to right, #2563eb, #16a34a);
+        color: white;
+        border-radius: 1rem;
+        padding: 2rem;
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .cta-title {
+        font-size: 1.875rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+      }
+
+      .cta-description {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        max-width: 48rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .button-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+      }
+
+      @media (min-width: 640px) {
+        .button-container {
+          flex-direction: row;
+        }
+      }
+
+      .button {
+        font-weight: bold;
+        padding: 1rem 2rem;
+        border-radius: 2rem;
+        text-decoration: none;
+        font-size: 1.125rem;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+      }
+
+      .button-white {
+        background-color: white;
+        color: #2563eb;
+      }
+
+      .button-white:hover {
+        background-color: #f3f4f6;
+      }
+
+      .button-yellow {
+        background-color: #fbbf24;
+        color: #1f2937;
+      }
+
+      .button-yellow:hover {
+        background-color: #f59e0b;
+      }
+
+      .cta-note {
+        margin-top: 1.5rem;
+        color: #bfdbfe;
+      }
+
+      /* Footer */
+      .footer {
+        text-align: center;
+        margin-top: 3rem;
+        padding: 2rem;
+        color: #4b5563;
+      }
+
+      .footer-icons {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .footer-icon {
+        background-color: #f3f4f6;
+        padding: 0.5rem;
+        border-radius: 50%;
+      }
+
+      .footer-text {
+        font-size: 0.875rem;
+      }
+
+      .footer-contact {
+        font-size: 0.75rem;
+        margin-top: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-gradient">
+      <!-- Header -->
+      <header class="header">
+        <div class="container">
+          <div class="icons-container">
+            <div class="icon-box icon-blue">
+              <svg
+                class="icon"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                />
+              </svg>
+            </div>
+            <div class="icon-box icon-green">
+              <svg
+                class="icon"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                />
+              </svg>
+            </div>
+            <div class="icon-box icon-purple">
+              <svg
+                class="icon"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <h1 class="main-title">
+            Perdeu, mas podia ter salvo:
+            <span class="subtitle">
+              Segurança Digital e Backup Comunitário na Prática
+            </span>
+          </h1>
+
+          <p class="description">
+            Uma palestra gratuita para ensinar de forma simples como proteger
+            seus dados, fazer backup do celular e manter seu negócio seguro na
+            era digital.
+          </p>
+        </div>
+      </header>
+
+      <!-- Main Content -->
+      <main class="main-content">
+        <!-- Description Section -->
+        <section class="section">
+          <h2 class="section-title">
+            Por que esta palestra é importante para você?
+          </h2>
+
+          <div class="grid grid-2">
+            <div class="content-block">
+              <h3 class="risk-title">
+                <svg
+                  style="width: 1.5rem; height: 1.5rem; margin-right: 0.5rem"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 9v2m0 4h.01m-9 4h18a2 2 0 002-2V7a2 2 0 00-2-2H3a2 2 0 00-2 2v10a2 2 0 002 2z"
+                  />
+                </svg>
+                Riscos do dia a dia:
+              </h3>
+              <ul class="list">
+                <li class="list-item">
+                  <span class="bullet bullet-red">•</span>
+                  Celular roubado ou perdido com todas suas fotos e contatos
+                </li>
+                <li class="list-item">
+                  <span class="bullet bullet-red">•</span>
+                  Vírus que apaga seus arquivos importantes
+                </li>
+                <li class="list-item">
+                  <span class="bullet bullet-red">•</span>
+                  Golpes que roubam suas informações pessoais
+                </li>
+                <li class="list-item">
+                  <span class="bullet bullet-red">•</span>
+                  Perda de dados do seu negócio por problemas técnicos
+                </li>
+              </ul>
+            </div>
+
+            <div class="content-block">
+              <h3 class="benefit-title">
+                <svg
+                  style="width: 1.5rem; height: 1.5rem; margin-right: 0.5rem"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                O que você vai aprender:
+              </h3>
+              <ul class="list">
+                <li class="list-item">
+                  <span class="bullet bullet-green">•</span>
+                  Como fazer backup do seu celular automaticamente
+                </li>
+                <li class="list-item">
+                  <span class="bullet bullet-green">•</span>
+                  Proteger fotos, contatos e mensagens importantes
+                </li>
+                <li class="list-item">
+                  <span class="bullet bullet-green">•</span>
+                  Identificar e evitar golpes digitais
+                </li>
+                <li class="list-item">
+                  <span class="bullet bullet-green">•</span>
+                  Organizar um sistema de backup para seu negócio
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Practical Examples Section -->
+        <section class="bg-gradient-light">
+          <h2 class="section-title">Exemplos práticos que vamos ensinar</h2>
+
+          <div class="grid grid-2">
+            <div class="example-card">
+              <div class="example-icon example-icon-blue">
+                <svg
+                  style="width: 1.5rem; height: 1.5rem; color: #2563eb"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0h3m-3 0h-5m3 0h5"
+                  />
+                </svg>
+              </div>
+              <h3 class="example-title">Para pequenos comerciantes</h3>
+              <p class="example-description">
+                Aprenda a proteger os dados dos seus clientes, backup das
+                vendas, e como recuperar informações se algo der errado.
+              </p>
+              <ul class="feature-list">
+                <li>• Backup de cadastro de clientes</li>
+                <li>• Proteção de dados de vendas</li>
+                <li>• Segurança em apps de pagamento</li>
+              </ul>
+            </div>
+
+            <div class="example-card">
+              <div class="example-icon example-icon-green">
+                <svg
+                  style="width: 1.5rem; height: 1.5rem; color: #16a34a"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+                  />
+                </svg>
+              </div>
+              <h3 class="example-title">Para usuários do dia a dia</h3>
+              <p class="example-description">
+                Vamos mostrar ferramentas simples que você já tem no celular
+                para proteger suas memórias e informações.
+              </p>
+              <ul class="feature-list">
+                <li>• Google Drive e Google Fotos</li>
+                <li>• Backup do WhatsApp</li>
+                <li>• Sincronização de contatos</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- Event Details Section -->
+        <section class="section">
+          <h2 class="section-title">Informações da Palestra</h2>
+
+          <div class="grid grid-4">
+            <div class="event-detail detail-blue">
+              <div class="detail-icon detail-icon-blue">
+                <svg
+                  style="width: 1.5rem; height: 1.5rem; color: white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  />
+                </svg>
+              </div>
+              <h3 class="detail-title">Data</h3>
+              <p class="detail-content">Sábado<br />14 de Junho</p>
+            </div>
+
+            <div class="event-detail detail-green">
+              <div class="detail-icon detail-icon-green">
+                <svg
+                  style="width: 1.5rem; height: 1.5rem; color: white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+              </div>
+              <h3 class="detail-title">Horário</h3>
+              <p class="detail-content">10:00h<br />Manhã</p>
+            </div>
+
+            <div class="event-detail detail-purple">
+              <div class="detail-icon detail-icon-purple">
+                <svg
+                  style="width: 1.5rem; height: 1.5rem; color: white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                  />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                  />
+                </svg>
+              </div>
+              <h3 class="detail-title">Local</h3>
+              <p class="detail-content">
+                Centro Comunitário<br />Rua das Flores, 123
+              </p>
+            </div>
+
+            <div class="event-detail detail-orange">
+              <div class="detail-icon detail-icon-orange">
+                <svg
+                  style="width: 1.5rem; height: 1.5rem; color: white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+                  />
+                </svg>
+              </div>
+              <h3 class="detail-title">Investimento</h3>
+              <p class="detail-content free-text">
+                GRATUITO<br />Inscrição obrigatória
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="cta-section">
+          <h2 class="cta-title">Participe e proteja suas informações!</h2>
+
+          <p class="cta-description">
+            Nossa missão é ensinar de forma simples e ajudar toda a comunidade a
+            proteger suas informações. Venha aprender conosco e leve
+            conhecimento prático para aplicar no mesmo dia!
+          </p>
+
+          <p class="cta-note">
+            Vagas limitadas • Confirme sua presença • Traga amigos e familiares
+          </p>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+          <div class="footer-icons">
+            <div class="footer-icon">
+              <svg
+                style="width: 1.25rem; height: 1.25rem; color: #4b5563"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+                />
+              </svg>
+            </div>
+            <div class="footer-icon">
+              <svg
+                style="width: 1.25rem; height: 1.25rem; color: #4b5563"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
+                />
+              </svg>
+            </div>
+            <div class="footer-icon">
+              <svg
+                style="width: 1.25rem; height: 1.25rem; color: #4b5563"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
+                />
+              </svg>
+            </div>
+          </div>
+
+          <p class="footer-text">
+            Uma iniciativa comunitária para democratizar o conhecimento em
+            segurança digital
+          </p>
+          <p class="footer-contact">
+            Dúvidas? Entre em contato: (11) 98744-0811 |
+            marcelo.kiilian@gmail.com
+          </p>
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
